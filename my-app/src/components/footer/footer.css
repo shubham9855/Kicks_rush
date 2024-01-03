@@ -1,0 +1,41 @@
+.main {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  height: 200px;
+  position: fixed;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+}
+
+.left {
+  color: white;
+  display: flex;
+  margin-left: 200px;
+}
+.column1 {
+  padding-top: 20px;
+}
+.column2 {
+  padding-top: 20px;
+  margin-left: 100px;
+}
+.heading {
+  font-size: 13px;
+  font-weight: 700;
+}
+.content {
+  font-size: 13px;
+  margin-top: 7px;
+}
+.right {
+  margin-right: 200px;
+}
+.socials-img {
+  margin-top: 20px;
+  background-color: white;
+  height: 30px;
+  border-radius: 11px;
+  margin-left: 5px;
+}
