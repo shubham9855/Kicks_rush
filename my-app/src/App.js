@@ -3,6 +3,9 @@ import { Navbar } from "./components/navbar/navbar.js";
 import { Footer } from "./components/footer/footer.js";
 import { Home } from "./components/Home/Home.js";
 import { Sneaker } from "./components/sneakers/Sneaker.js";
+import { Cart } from "./components/cart/Cart.js";
+import "../src/index.css";
+import "./App.css";
 
 function App() {
   return (
@@ -11,9 +14,9 @@ function App() {
       <Routes>
         <Route path="/" Component={Home}></Route>
         <Route path="/sneaker" Component={Sneaker}></Route>
-        {/* <Route path="/favorites" Component={Favorites}></Route>
-        <Route path="/login" Component={Login}></Route>
-        <Route path="/cart" Component={Cart}></Route> */}
+        {/* <Route path="/favorites" Component={Favorites}></Route> */}
+        {/* <Route path="/login" Component={Login}></Route> */}
+        <Route path="/cart" Component={Cart}></Route>
       </Routes>
       <Footer></Footer>
     </>

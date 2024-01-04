@@ -103,6 +103,10 @@
 .login-icon:hover {
   background-color: #f5f5f5;
 }
+.image-icon {
+  cursor: pointer;
+  text-decoration: none;
+}
 .cart-image {
   height: 16px;
   width: 16px;
