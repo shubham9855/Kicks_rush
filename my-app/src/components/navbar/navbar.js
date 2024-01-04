@@ -7,10 +7,14 @@ export const Navbar = () => {
   return (
     <>
       <div className="navbar-container">
-        <div className="navbar-logo">kicks_rush</div>
+        <div className="navbar-logo">
+          <Link to="/" className="logo-icon">
+            kicks_rush
+          </Link>
+        </div>
 
         <div className="navbar-middle">
-          <Link to="/sneakers" className="sneaker-icon">
+          <Link to="/sneaker" className="sneaker-icon">
             Sneakers
           </Link>
           <Link to="/favorites" className="fav-icon">

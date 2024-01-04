@@ -6,7 +6,7 @@ import youtube from "../../images/youtube.png";
 export const Footer = () => {
   return (
     <>
-      <div className="main">
+      <footer className="main">
         <div className="left">
           <div className="column1">
             <div className="heading">FIND A STORE</div>
@@ -28,7 +28,7 @@ export const Footer = () => {
           <img src={twitter} className="socials-img"></img>
           <img src={facebook} className="socials-img"></img>
         </div>
-      </div>
+      </footer>
     </>
   );
 };
