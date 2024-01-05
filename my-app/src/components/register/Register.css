@@ -1,14 +1,15 @@
 /* LoginForm.css */
 
-.login-container {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  /* height: 100vh; */
   background-color: white;
 }
 
-.login-form {
+.register-form {
   width: 350px;
   display: flex;
   flex-direction: column;
@@ -19,26 +20,27 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
 
-.login-form h2 {
+.register-form h2 {
   text-align: center;
   color: black;
 }
 
-.input-group {
+.inp-group {
   width: 250px;
   margin-bottom: 20px;
 }
 
-.input-group input {
+.inp-group input {
   width: 100%;
   padding: 10px;
   font-size: 16px;
-  border-radius: 20px;
+  text-decoration: none;
   border: 1px solid #f5f5f5;
+  border-radius: 20px;
   background-color: #f5f5f5;
 }
 
-.login-button {
+.reg-button {
   width: 150px;
   padding: 15px 10px;
   background-color: black;
@@ -47,23 +49,14 @@
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
+  margin-top: 20px;
   /* margin-left: 10px; */
 }
 
-.login-button:hover {
+.reg-button:hover {
   opacity: 0.8;
 }
 
-.login-button:active {
+.reg-button:active {
   background-color: #222;
-}
-
-.toregister {
-  text-decoration: none;
-  margin-top: 15px;
-  /* margin-left: 50px; */
-  color: black;
-}
-.toregister:hover {
-  opacity: 0.6;
 }

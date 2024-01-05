@@ -4,8 +4,10 @@ import { Footer } from "./components/footer/footer.js";
 import { Home } from "./components/Home/Home.js";
 import { Sneaker } from "./components/sneakers/Sneaker.js";
 import { Cart } from "./components/cart/Cart.js";
+import { Login } from "./components/login/Login.js";
 import "../src/index.css";
 import "./App.css";
+import { Register } from "./components/register/Register.js";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
         <Route path="/" Component={Home}></Route>
         <Route path="/sneaker" Component={Sneaker}></Route>
         {/* <Route path="/favorites" Component={Favorites}></Route> */}
-        {/* <Route path="/login" Component={Login}></Route> */}
+        <Route path="/login" Component={Login}></Route>
+        <Route path="/register" Component={Register}></Route>
         <Route path="/cart" Component={Cart}></Route>
       </Routes>
       <Footer></Footer>
