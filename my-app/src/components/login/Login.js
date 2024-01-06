@@ -3,12 +3,12 @@ import "./login.css";
 import { Link } from "react-router-dom";
 
 export const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Username:", username);
+    console.log("Username:", email);
     console.log("Password:", password);
     // Here, you can add your login logic
   };
@@ -21,8 +21,8 @@ export const Login = () => {
           <input
             type="text"
             placeholder="Email"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>

@@ -3,7 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../sneakers/Sneaker.css";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { getSneakers } from "../../redux/action/sneakeraction";
 
 export const Home = () => {
   const sliderRef = useRef(null);

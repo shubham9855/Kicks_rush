@@ -17,7 +17,7 @@ export const Navbar = () => {
           <Link to="/sneaker" className="sneaker-icon">
             Sneakers
           </Link>
-          <Link to="/favorites" className="fav-icon">
+          <Link to="/favorite" className="fav-icon">
             Favorites
           </Link>
           <Link to="/about" className="fav-icon">
