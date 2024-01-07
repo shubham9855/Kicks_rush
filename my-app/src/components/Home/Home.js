@@ -1,134 +1,88 @@
 import { Product } from "../../Dataset";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../sneakers/Sneaker.css";
-import { useRef, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getSneakers } from "../../redux/action/sneakeraction";
 
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+
+import "../Home/Home.css";
+
 export const Home = () => {
-  const sliderRef = useRef(null);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: false,
-    centerMode: true,
-    autpPlaySpeed: 1000,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+  const dispatch = useDispatch();
+  const dataset = useSelector((state) => state.Sneakerreducer.product);
+  console.log("products", dataset);
+
+  useEffect(() => {
+    console.log(" home action dispatched");
+    dispatch(getSneakers());
+  }, []);
+  let val = Math.floor(Math.random() * 20);
+  console.log("random val", val);
+
+  const carouslcomponent = () => {
+    const carousal = [];
+    for (let i = val; i < val + 4; i++) {
+      carousal.push(
+        <SwiperSlide>
+          <div className="home-main">
+            <div className="first-component">
+              <div className="details">
+                <div className="img-in">
+                  <div className="info">
+                    <div className="shoe">{dataset[i]?.name}</div>
+                    <div className="shoe-info">{dataset[i]?.brand}</div>
+                  </div>
+                  <div className="stars">4.7 stars</div>
+                </div>
+                <div className="prod-detail">
+                  <div className="prod-size">
+                    <div>Size</div>
+                    <select className="prod-size">
+                      <option>1</option>
+                    </select>
+                  </div>
+                  <div className="price">
+                    <button className="cart-button">Add to bag</button>
+                    <div className="range">MRP.{dataset[i]?.price}</div>
+                  </div>
+                </div>
+              </div>
+              <div className="img-container">
+                <img className="main-img" src={dataset[i]?.imageURL}></img>
+              </div>
+            </div>
+          </div>
+        </SwiperSlide>
+      );
+    }
+    return carousal;
   };
+  const carArray = carouslcomponent();
+  console.log("car array ", carArray);
   return (
     <div className="home">
-      <h2>Vertical Mode with Swipe To Slide</h2>
-      <Slider ref={sliderRef} {...settings}>
-        <div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            {/* <div className="parent-main">
-            <div className="main-sneaker">
-              <div className="img-section">
-                <img
-                  className="sneaker-img"
-                  src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/9dda6202-e2ff-4711-9a09-0fcb7d90c164/mercurial-vapor-13-elite-fg-firm-ground-soccer-cleat-14MsF2.jpg"
-                ></img>
-              </div>
-
-              <div className="sneaker-details">
-                <div className="info">
-                  <div className="shoe-name">shubham</div>
-                  <div className="brand">nike</div>
-                  <div className="mrp">MRP.</div>
-                </div>
-
-                <div className="add-to-cart">
-                  <button className="add-button">Add to Bag</button>
-                </div>
-              </div>
-            </div>
-          </div> */}
-            <div style={{ width: 400, backgroundColor: "red", height: 300 }} />
-          </div>
-        </div>
-        <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <div className="parent-main">
-            <div className="main-sneaker">
-              <div className="img-section">
-                <img
-                  className="sneaker-img"
-                  src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/9dda6202-e2ff-4711-9a09-0fcb7d90c164/mercurial-vapor-13-elite-fg-firm-ground-soccer-cleat-14MsF2.jpg"
-                ></img>
-              </div>
-
-              <div className="sneaker-details">
-                <div className="info">
-                  <div className="shoe-name">shubham</div>
-                  <div className="brand">nike</div>
-                  <div className="mrp">MRP.</div>
-                </div>
-
-                <div className="add-to-cart">
-                  <button className="add-button">Add to Bag</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div>
-      </Slider>
-      <button
-        onClick={() => {
-          sliderRef.current.slickNext(); // Call slickNext on the ref
-        }}
+      <Swiper
+        // install Swiper modules
+        modules={[Navigation, A11y]}
+        spaceBetween={50}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
       >
-        Next
-      </button>
-
-      {/* Previous button */}
-      <button
-        onClick={() => {
-          sliderRef.current.slickPrev(); // Call slickPrev on the ref
-        }}
-      >
-        Prev
-      </button>
+        {carArray.map((item) => {
+          return item;
+        })}
+      </Swiper>
     </div>
   );
 };
+// };

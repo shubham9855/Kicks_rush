@@ -8,6 +8,7 @@
   right: 0px;
   background-color: white;
   height: 60px;
+  z-index: 100;
 }
 .navbar-logo {
   color: black;

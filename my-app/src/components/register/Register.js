@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signUp } from "../../redux/action/loginaction";
 
 export const Register = () => {
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state.loginreducer);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setconfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Username:", username);
+    console.log("email:", email);
     console.log("Password:", password);
-    // Here, you can add your login logic
+    console.log("cPassword:", confirmPassword);
+    console.log("register clicked");
+
+    const formData = { username, email, password };
+    console.log(formData);
+
+    dispatch(signUp(formData));
+    navigate("/");
   };
 
   return (

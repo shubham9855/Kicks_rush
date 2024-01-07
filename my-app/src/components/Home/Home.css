@@ -1,1 +1,72 @@
+.home-main {
+  display: flex;
+  margin-left: 180px;
+  margin-right: 180px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 
+  /* width: 1200px; */
+}
+.first-component {
+  display: flex;
+  justify-content: space-between;
+  flex: 2;
+  /* border: 1px solid black; */
+}
+.details {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.img-in {
+}
+.info {
+}
+.shoe {
+  font-size: 35px;
+  font-weight: bold;
+}
+.shoe-info {
+  margin-top: 5px;
+}
+.stars {
+  font-size: 12px;
+  margin-top: 30px;
+}
+.prod-detail {
+}
+.prod-size {
+  display: flex;
+  justify-content: space-between;
+}
+.price {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-button {
+  width: 150px;
+  padding: 15px 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.range {
+  margin-left: 30px;
+}
+
+.img-container {
+  /* border: 1px solid black; */
+  width: 450px;
+  height: 450px;
+}
+.main-img {
+  width: 100%;
+  border-radius: 100px;
+}

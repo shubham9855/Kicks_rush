@@ -3,8 +3,12 @@ body {
   margin: 0;
   padding-top: 80px;
 }
-.home .slick-arrow.slick-next {
-  display: none !important;
-  height: 0px;
-  width: 0px;
+
+.home .swiper-button-next,
+.swiper-button-prev {
+  color: black;
+}
+
+.swiper-scrollbar {
+  display: none;
 }

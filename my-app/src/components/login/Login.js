@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 import "./login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn } from "../../redux/action/loginaction";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const selector = useSelector((state) => state.loginreducer);
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Username:", email);
-    console.log("Password:", password);
-    // Here, you can add your login logic
+    console.log("selector", selector);
+
+    selector?.user.map((obj) => {
+      if (email === obj.email && password === obj.password) {
+        console.log("login done");
+        dispatch(signIn());
+        navigate("/");
+      } else {
+        alert("you must sign-up");
+      }
+    });
   };
 
   return (
