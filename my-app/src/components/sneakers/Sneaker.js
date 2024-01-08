@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getSneakers } from "../../redux/action/sneakeraction";
 import { addtocart } from "../../redux/action/cartaction";
 import favIcon from "../../images/like_image.png";
+import { addtofav } from "../../redux/action/favaction";
 
 export const Sneaker = () => {
   const [shoeSize, setShoeSize] = useState("UK 6");
@@ -32,7 +33,13 @@ export const Sneaker = () => {
               <div className="img-section">
                 <img className="sneaker-img" src={item.imageURL}></img>
                 <div className="favor-icon">
-                  <img className="favor-img" src={favIcon}></img>
+                  <img
+                    className="favor-img"
+                    src={favIcon}
+                    onClick={() => {
+                      dispatch(addtofav(item));
+                    }}
+                  ></img>
                 </div>
               </div>
 
