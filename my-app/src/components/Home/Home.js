@@ -24,7 +24,8 @@ export const Home = () => {
   useEffect(() => {
     console.log(" home action dispatched");
     dispatch(getSneakers());
-  }, [Home]);
+  }, []);
+
   let val = Math.floor(Math.random() * 20);
   console.log("random val", val);
 
@@ -36,6 +37,12 @@ export const Home = () => {
     const newItem = { ...item, size: shoeSize, qty: 1 };
     dispatch(addtocart(newItem));
     setShoeSize("UK 6");
+  };
+
+  const selectSize = (e) => {
+    e.preventDefault();
+    setShoeSize(e.target.value);
+    console.log(e.target.value);
   };
 
   const carouslcomponent = () => {
@@ -57,14 +64,7 @@ export const Home = () => {
               <div className="prod-detail">
                 <div className="prod-size">
                   <div>Size</div>
-                  <select
-                    className="select-size"
-                    onChange={(e) => {
-                      console.log("sizze value", e.target.value);
-                      e.preventDefault();
-                      setShoeSize(e.target.value);
-                    }}
-                  >
+                  <select className="select-size" onChange={selectSize}>
                     <option>6</option>
                     <option>7</option>
                     <option>8</option>

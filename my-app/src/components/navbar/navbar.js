@@ -1,11 +1,16 @@
 import "../navbar/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import cart from "../../images/cart_image.png";
 import search from "../../images/search_image.png";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/action/loginaction";
+import { useState } from "react";
+import { Sneaker } from "../sneakers/Sneaker";
+import { getSneakers, searchSneakers } from "../../redux/action/sneakeraction";
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+  const [find, setFind] = useState("");
   const dispatch = useDispatch();
   const islogin = useSelector((state) => state.loginreducer.islogin);
 
@@ -34,8 +39,19 @@ export const Navbar = () => {
                 type="text"
                 placeholder="Search"
                 className="search-input"
-              ></input>
-              <img src={search} className="search-img"></img>
+                onChange={(e) => {
+                  console.log("search val", e.target.value);
+                  setFind(e.target.value);
+                }}
+              />
+              <img
+                src={search}
+                className="search-img"
+                onClick={() => {
+                  dispatch(searchSneakers(find));
+                  navigate("/sneaker");
+                }}
+              ></img>
             </div>
           </div>
           <div className="navbar-mail">
@@ -78,8 +94,20 @@ export const Navbar = () => {
                 type="text"
                 placeholder="Search"
                 className="search-input"
+                onChange={(e) => {
+                  console.log("search val", e.target.value);
+                  setFind(e.target.value);
+                }}
               ></input>
-              <img src={search} className="search-img"></img>
+              <img
+                src={search}
+                className="search-img"
+                onClick={() => {
+                  console.log("seach action dispatched", find);
+                  dispatch(searchSneakers(find));
+                  navigate("/sneaker");
+                }}
+              ></img>
             </div>
           </div>
           <div className="navbar-mail">

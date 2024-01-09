@@ -8,7 +8,7 @@ import { CartItem } from "./cartitem";
 export const Cart = () => {
   const dispatch = useDispatch();
   const cartProd = useSelector((state) => state.cartreducer.cart_product);
-  console.log("cartProd", cartProd);
+  console.log("cartProd", cartProd.length);
 
   let cartTotal = 0;
   cartProd.map((item) => {
@@ -17,32 +17,44 @@ export const Cart = () => {
   let taxTotal = Math.floor(0.18 * cartTotal);
   let subTotal = cartTotal + taxTotal;
 
-  return (
-    <div className="cart-main">
-      <div className="bag">
-        <div className="bag-heading">Bag</div>
-        {cartProd.map((item) => {
-          return <CartItem item={item} />;
-        })}
-      </div>
-      <div className="summary">
-        <div className="summary-heading">Summary</div>
-        <div className="summary-content">
-          <div className="subtotal">
-            <div>Subtotal</div>
-            <div>{cartTotal} $</div>
-          </div>
-          <div className="tax">
-            <div>Tax & Delivery (18% GST)</div>
-            <div>{taxTotal} $</div>
-          </div>
-          <div className="total">
-            <div>Total</div>
-            <div>{subTotal} $</div>
+  if (cartProd.length == 0) {
+    return (
+      <>
+        <div className="cart-container">
+          <div className="cart-message">
+            <h2>Your cart is empty</h2>
+            <p>Add some items to your cart to continue shopping.</p>
           </div>
         </div>
-        <button className="checkout-button">Checkout</button>
+      </>
+    );
+  } else
+    return (
+      <div className="cart-main">
+        <div className="bag">
+          <div className="bag-heading">Bag</div>
+          {cartProd.map((item) => {
+            return <CartItem item={item} />;
+          })}
+        </div>
+        <div className="summary">
+          <div className="summary-heading">Summary</div>
+          <div className="summary-content">
+            <div className="subtotal">
+              <div>Subtotal</div>
+              <div>{cartTotal} $</div>
+            </div>
+            <div className="tax">
+              <div>Tax & Delivery (18% GST)</div>
+              <div>{taxTotal} $</div>
+            </div>
+            <div className="total">
+              <div>Total</div>
+              <div>{subTotal} $</div>
+            </div>
+          </div>
+          <button className="checkout-button">Checkout</button>
+        </div>
       </div>
-    </div>
-  );
+    );
 };

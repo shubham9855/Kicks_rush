@@ -120,3 +120,20 @@
   height: 150px;
   width: 150px;
 }
+
+/* static page  */
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+
+.cart-message {
+  text-align: center;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}

@@ -83,3 +83,20 @@
 .add-button:hover {
   opacity: 0.7;
 }
+
+/* static page */
+
+.fav-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  height: 100vh;
+}
+
+.fav-message {
+  text-align: center;
+  padding: 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
