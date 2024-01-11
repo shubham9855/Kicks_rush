@@ -26,8 +26,8 @@ export const Home = () => {
     dispatch(getSneakers());
   }, []);
 
-  let val = Math.floor(Math.random() * 20);
-  console.log("random val", val);
+  // let val = Math.floor(Math.random() * 20);
+  // console.log("random val", val);
 
   const cartAddition = (id) => {
     let item = {};
@@ -47,7 +47,7 @@ export const Home = () => {
 
   const carouslcomponent = () => {
     const carousal = [];
-    for (let i = val; i < val + 4; i++) {
+    for (let i = 1; i < 5; i++) {
       carousal.push(
         <SwiperSlide>
           <div className="home-main">

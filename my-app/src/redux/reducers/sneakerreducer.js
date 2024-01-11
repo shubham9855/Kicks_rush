@@ -14,6 +14,11 @@ export const Sneakerreducer = (state = initialState, action) => {
         ...state,
         searched_sneaker: action.payload,
       };
+    case "CLEAR_SNEAKERS":
+      return {
+        ...state,
+        searched_sneaker: "",
+      };
     default:
       return state;
   }

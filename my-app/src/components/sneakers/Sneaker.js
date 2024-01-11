@@ -15,12 +15,16 @@ export const Sneaker = ({ find }) => {
   const search_bar = useSelector(
     (state) => state.Sneakerreducer.searched_sneaker
   );
+  var filterProducts = search_bar;
   console.log("products", products);
   console.log("searchbar", search_bar);
   useEffect(() => {
     console.log("action dispatched");
     dispatch(getSneakers());
-  }, [search_bar]);
+    // setTimeout(() => {
+    //   dispatch(clearSneakers());
+    // }, 2000);
+  });
 
   const cartAddition = (item) => {
     const newItem = { ...item, size: shoeSize, qty: 1 };
@@ -33,15 +37,13 @@ export const Sneaker = ({ find }) => {
       <div className="parent-main">
         {products
           .filter((obj) => {
-            if (search_bar == "") {
+            if (filterProducts == "") {
               console.log("inside if block");
               return obj;
             } else {
-              console.log(
-                "obj.name.includes(filterProducts)s",
-                obj.name.toLowerCase().includes(search_bar.toLowerCase())
-              );
-              return obj.name.includes(search_bar);
+              return obj.name
+                .toLowerCase()
+                .includes(filterProducts.toLowerCase());
             }
           })
           .map((item) => {

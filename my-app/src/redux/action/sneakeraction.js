@@ -10,3 +10,7 @@ export const searchSneakers = (state) => ({
   type: "SEARCH_SNEAKERS",
   payload: state,
 });
+
+export const clearSneakers = () => ({
+  type: "CLEAR_SNEAKERS",
+});

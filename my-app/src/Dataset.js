@@ -1,7 +1,7 @@
 export const Product = [
   {
     id: 1,
-    name: "Nike React Infinity Run Flyknit",
+    name: "Nike React Infinity Run ",
     brand: "NIKE",
     gender: "MEN",
     category: "RUNNING",
@@ -27,7 +27,7 @@ export const Product = [
   },
   {
     id: 3,
-    name: "Nike Air Zoom Pegasus 37",
+    name: "Nike Air Zoom Pegasus",
     brand: "NIKE",
     gender: "WOMEN",
     category: "RUNNING",
@@ -40,7 +40,7 @@ export const Product = [
   },
   {
     id: 4,
-    name: "Nike Joyride Run Flyknit",
+    name: "Nike Joyride Run Fly",
     brand: "NIKE",
     gender: "WOMEN",
     category: "RUNNING",
@@ -53,7 +53,7 @@ export const Product = [
   },
   {
     id: 5,
-    name: "Nike Mercurial Vapor 13 Elite FG",
+    name: "Nike Mercurial Vapor",
     brand: "NIKE",
     gender: "WOMEN",
     category: "FOOTBALL",
@@ -66,7 +66,7 @@ export const Product = [
   },
   {
     id: 6,
-    name: "Nike Phantom Vision Elite Dynamic Fit FG",
+    name: "Nike Phantom Vision ",
     brand: "NIKE",
     gender: "WOMEN",
     category: "FOOTBALL",
@@ -79,7 +79,7 @@ export const Product = [
   },
   {
     id: 7,
-    name: "Nike Phantom Venom Academy FG",
+    name: "Nike Phantom Venom Academy ",
     brand: "NIKE",
     gender: "WOMEN",
     category: "FOOTBALL",
@@ -92,7 +92,7 @@ export const Product = [
   },
   {
     id: 8,
-    name: "Nike Mercurial Vapor 13 Elite Tech Craft FG",
+    name: "Nike Mercurial Vapor 13 ",
     brand: "NIKE",
     gender: "MEN",
     category: "FOOTBALL",
@@ -105,7 +105,7 @@ export const Product = [
   },
   {
     id: 9,
-    name: "Nike Mercurial Superfly 7 Pro MDS FG",
+    name: "Nike Mercurial Superfly",
     brand: "NIKE",
     gender: "MEN",
     category: "FOOTBALL",
@@ -116,19 +116,19 @@ export const Product = [
       "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-a52a8aec-22dc-4982-961b-75c5f4c72805/mercurial-superfly-7-pro-mds-fg-firm-ground-soccer-cleat-mhcpdN.jpg",
     slug: "nike-mercurial-superfly-7-pro-mds-fg",
   },
-  {
-    id: 10,
-    name: "Nike Air Force 1",
-    brand: "NIKE",
-    gender: "KIDS",
-    category: "CASUAL",
-    price: 90,
-    is_in_inventory: true,
-    items_left: 3,
-    imageURL:
-      "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/178b2a46-3ee4-492b-882e-f71efdd53a36/air-force-1-big-kids-shoe-2zqp8D.jpg",
-    slug: "nike-air-force-1",
-  },
+  // {
+  //   id: 10,
+  //   name: "Nike Air Force 1",
+  //   brand: "NIKE",
+  //   gender: "KIDS",
+  //   category: "CASUAL",
+  //   price: 90,
+  //   is_in_inventory: true,
+  //   items_left: 3,
+  //   imageURL:
+  //     "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/178b2a46-3ee4-492b-882e-f71efdd53a36/air-force-1-big-kids-shoe-2zqp8D.jpg",
+  //   slug: "nike-air-force-1",
+  // },
   {
     id: 11,
     name: "Nike Air Max 90",
@@ -155,19 +155,19 @@ export const Product = [
       "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/i1-620aeb37-1b28-44b0-9b14-5572f8cbc948/air-max-90-ltr-big-kids-shoe-hdNLQ5.jpg",
     slug: "nike-air-max-90-ltr",
   },
-  {
-    id: 13,
-    name: "Nike Joyride Dual Run",
-    brand: "NIKE",
-    gender: "KIDS",
-    category: "RUNNING",
-    price: 110,
-    is_in_inventory: false,
-    items_left: 3,
-    imageURL:
-      "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/33888130-0320-41a1-ba53-a026decd8aa2/joyride-dual-run-big-kids-running-shoe-1HDJF8.jpg",
-    slug: "nike-joyride-dual-run",
-  },
+  // {
+  //   id: 13,
+  //   name: "Nike Joyride Dual Run",
+  //   brand: "NIKE",
+  //   gender: "KIDS",
+  //   category: "RUNNING",
+  //   price: 110,
+  //   is_in_inventory: false,
+  //   items_left: 3,
+  //   imageURL:
+  //     "https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/33888130-0320-41a1-ba53-a026decd8aa2/joyride-dual-run-big-kids-running-shoe-1HDJF8.jpg",
+  //   slug: "nike-joyride-dual-run",
+  // },
   {
     id: 14,
     name: "Nike Renew Run",
@@ -429,7 +429,7 @@ export const Product = [
   },
   {
     id: 34,
-    name: "Michael Feburary SK8-Hi",
+    name: "Michael Feburary ",
     brand: "Vans",
     gender: "MEN",
     category: "CASUAL",

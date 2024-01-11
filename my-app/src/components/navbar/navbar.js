@@ -6,7 +6,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/action/loginaction";
 import { useState } from "react";
 import { Sneaker } from "../sneakers/Sneaker";
-import { getSneakers, searchSneakers } from "../../redux/action/sneakeraction";
+import {
+  clearSneakers,
+  getSneakers,
+  searchSneakers,
+} from "../../redux/action/sneakeraction";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -25,7 +29,11 @@ export const Navbar = () => {
           </div>
 
           <div className="navbar-middle">
-            <Link to="/sneaker" className="sneaker-icon">
+            <Link
+              to="/sneaker"
+              className="sneaker-icon"
+              onClick={() => dispatch(clearSneakers())}
+            >
               Sneakers
             </Link>
             <Link to="/favorite" className="fav-icon">
@@ -80,7 +88,11 @@ export const Navbar = () => {
           </div>
 
           <div className="navbar-middle">
-            <Link to="/sneaker" className="sneaker-icon">
+            <Link
+              to="/sneaker"
+              className="sneaker-icon"
+              onClick={() => dispatch(clearSneakers())}
+            >
               Sneakers
             </Link>
             <Link to="/favorite" className="fav-icon">

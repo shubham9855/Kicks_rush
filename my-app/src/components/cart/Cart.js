@@ -8,12 +8,14 @@ import { CartItem } from "./cartitem";
 export const Cart = () => {
   const dispatch = useDispatch();
   const cartProd = useSelector((state) => state.cartreducer.cart_product);
-  console.log("cartProd", cartProd.length);
+  console.log("cartProd", cartProd);
 
   let cartTotal = 0;
-  cartProd.map((item) => {
-    cartTotal += item.price;
-  });
+  {
+    cartProd?.map((item) => {
+      cartTotal += item.qty * item?.price;
+    });
+  }
   let taxTotal = Math.floor(0.18 * cartTotal);
   let subTotal = cartTotal + taxTotal;
 
@@ -33,8 +35,8 @@ export const Cart = () => {
       <div className="cart-main">
         <div className="bag">
           <div className="bag-heading">Bag</div>
-          {cartProd.map((item) => {
-            return <CartItem item={item} />;
+          {cartProd?.map((item, ind) => {
+            return <CartItem key={ind} item={item} />;
           })}
         </div>
         <div className="summary">

@@ -40,7 +40,7 @@
 }
 .prod-detail {
   position: absolute;
-  bottom: 0px;
+  bottom: 15px;
 }
 .prod-size {
   display: flex;
@@ -70,6 +70,9 @@
   border-radius: 25px;
   cursor: pointer;
   font-size: 16px;
+}
+.cart-button:active {
+  transform: scale(0.95);
 }
 .range {
   margin-left: 30px;
@@ -107,4 +110,7 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 30px;
+}
+.shop-now-button:active {
+  transform: scale(0.95);
 }
